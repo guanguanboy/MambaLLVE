@@ -1,8 +1,6 @@
-# Binarized Low-light Raw Video Enhancement
+# MambaLLVE:Low-light Video Enhancement with Mamba-based Locality Relationship Modeling
 
 This repository contains the official implementation of the following paper:
-
-> Gengchen Zhang, [Yulun Zhang](https://yulunzhang.com/), [Xin Yuan](https://en.westlake.edu.cn/faculty/xin-yuan.html) and [Ying Fu](https://ying-fu.github.io/index.html). "Binarized Low-light Raw Video Enhancement", In *CVPR*, 2024.
 
 ## 🎥 Demo
 
@@ -10,7 +8,7 @@ This repository contains the official implementation of the following paper:
 
 ## 📖 Introduction
 
-In this work, we design a binary raw video enhancement model (BRVE). It can achieve satisfactory results with low memory and computation cost.
+In this work, we design a mamba-based video enhancement model. It can achieve satisfactory results with low memory and computation cost.
 
 <p align="center"> <img src="figures/framework.png"> </p>
 
