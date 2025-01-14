@@ -192,6 +192,14 @@ The path to save the quantitative results is specified by `--out test_results/BR
 
 The path to save enhanced frames and videos is specified by `--save-path test_results/BRVE_LLRVD`. The argument `--save-path` is optional.
 
+**Test on the LLRVD dataset with Mamba**
+
+Run the following command to reproduce the results in Table 1.
+
+```
+python tools/test.py configs/RainMamba_LLRVD.py experiments/RainMamba_LLRVD/latest.pth --seed 0 --out test_results/RainMamba_LLRVD/result.json --save-path test_results/RainMamba_LLRVD
+```
+
 **Test on the SMOID dataset**
 
 Run the following command to reproduce the results in Table 1.
@@ -210,6 +218,12 @@ Set `--master_port=29501` if there is a test process running on port `29500`.
 
 ```
 torchrun --nnodes=1 --node_rank=0 --master_addr="127.0.0.1" --nproc_per_node=1 --master_port=29500 tools/train.py configs/BRVE_LLRVD.py --seed 0 --launcher pytorch
+```
+
+**Train on the LLRVD dataset with Mamba**
+
+```
+torchrun --nnodes=1 --node_rank=0 --master_addr="127.0.0.1" --nproc_per_node=1 --master_port=29500 tools/train.py configs/RainMamba_LLRVD.py --seed 0 --launcher pytorch
 ```
 
 **Train on the SMOID dataset**
