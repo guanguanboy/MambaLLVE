@@ -178,7 +178,6 @@ class RainMamba(nn.Module):
         #print('input sizes =', n, t, c, h, w )
         self.check_if_mirror_extended(lqs)
 
-        """
         feat_in_1 = self.feat_extract1(lqs[:, 0, :, :, :])
         feat_in_2 = self.feat_extract2(lqs[:, 1, :, :, :])
         feat_in_3 = self.feat_extract3(lqs[:, 2, :, :, :])
@@ -188,7 +187,7 @@ class RainMamba(nn.Module):
         outs.append(feat_in_2)
         outs.append(feat_in_3)
         outs.append(feat_in_4)
-        """
+
         #feats_ = tuple(outs)
 
         #feats_ = torch.concat([feat_in_1,feat_in_2,feat_in_3,feat_in_4])
@@ -241,7 +240,7 @@ class RainMamba(nn.Module):
 
         x_re = self.up(x_re)
 
-        final = self.conv_last(x_re).transpose(1, 2) + lqs
+        final = self.conv_last(x_re).transpose(1, 2)
         #print('final size =', final.size())
         return final
 

@@ -138,6 +138,8 @@ class RainMambaBasicRestorer(BaseModel):
 
         losses = dict()
         output = self.generator(lq, hilbert_curve_large_scale, hilbert_curve_small_scale)
+        #print('output.shape=',output.shape)
+        #print('gt.shape=', gt.shape)
         loss_pix = self.pixel_loss(output, gt)
         losses['loss_pix'] = loss_pix
         outputs = dict(
